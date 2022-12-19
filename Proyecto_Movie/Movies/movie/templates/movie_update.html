@@ -8,18 +8,33 @@
     <title>Document</title>
 </head>
 <body>
+
+    {% extends 'movie/templates/index.html' %}
+
+    {% block content %}
     
     <form action="" method="POST">
        <div class="container">
         {% csrf_token %}
 
+        <strong>Pelicula</strong>
+
         {{ form.name}}
+        {{ form.name.errors}}
+
+        <strong>Comentarios</strong>
 
         {{ form.comment}}
 
+        <strong>Director</strong>
+
         {{ form.director}}
 
+        <strong>Actores</strong>
+
         {{ form.actores}}
+
+        <strong>Imdb</strong>
 
         {{ form.imdb}}
 
@@ -28,6 +43,8 @@
         </div>
        </div>
     </form>
+
+    {% endblock %}
     
 </body>
 </html>

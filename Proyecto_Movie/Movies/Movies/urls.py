@@ -19,6 +19,7 @@ from movie.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home, name=""),
     path('movie_list/', PeliculaListView.as_view(), name='movie_list'),
     path('movie_create/', PeliculaCreate.as_view(), name='movie_create'),
     path('movie_delete/<str:pk>/', PeliculaDelete.as_view(), name='movie_delete'),

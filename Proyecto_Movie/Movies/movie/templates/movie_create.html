@@ -8,25 +8,41 @@
     <title>Document</title>
 </head>
 <body>
+    {% extends 'movie/templates/index.html' %}
+
+    {% block content %}
     
     <form action="" method="POST">
        <div class="container">
         {% csrf_token %}
 
+        <strong>Pelicula</strong>
+
         {{ form.name}}
+
+        <strong>Comentarios</strong>
 
         {{ form.comment}}
 
+        <strong>Directores</strong>
+
         {{ form.director}}
 
+        <strong>Actores</strong>
+
         {{ form.actores}}
+
+        <strong>Imdb</strong>
 
         {{ form.imdb}}
 
         <div class="form-group is-grouped mt-3">
             <button class="btn btn-success"><i class="bi bi-plus-lg">Enviar</i></button>
+
         </div>
        </div>
+
+       {% endblock %}
     </form>
     
 </body>

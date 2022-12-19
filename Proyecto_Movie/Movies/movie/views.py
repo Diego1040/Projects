@@ -7,6 +7,11 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 
+def home(request):
+
+
+    return render(request, 'movie/templates/home.html')
+
 class PeliculaListView(ListView):
     template_name = "movie/templates/movie_list.html"
     model = Pelicula
@@ -30,4 +35,4 @@ class PeliculaUpdate(UpdateView):
     template_name_suffix = '_update_form'
 
     def get_success_url(self):
-        return reverse_lazy('book_edit', args=[self.object.name]) + '?ok'
+        return reverse_lazy('movie_update', args=[self.object.name]) + '?ok'

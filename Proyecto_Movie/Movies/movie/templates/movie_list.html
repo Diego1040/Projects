@@ -8,10 +8,14 @@
     <title>Lista Peliculas</title>
 </head>
 <body>
+    {% extends 'movie/templates/index.html' %}
 
-    <table>
+    {% block content %}
+
+
+    <table class="table">
         <thead>
-            <tr>
+            <tr >
                 <th>Pelicula</th>
                 <th>Director</th>
                 <th>Actores</th>
@@ -22,6 +26,7 @@
             {% for m in object_list %}
 
             <tr>
+                
                 <td>{{ m.name }}</td>
                 <td>{{ m.director }}</td>
 
@@ -34,8 +39,8 @@
                 <td>{{ m.imdb }}</td>
                 <td>
                     <div class="d-flex">
-                        <a class="btn btn-danger" href="{% url 'movie_delete' m.name%}"><i class="bi bi-trash"></i></a>               
-                        <a class="btn btn-warning" href="{% url 'movie_update' m.name%}"><i class="bi bi-pencil-square"></i></a>
+                        <a class="btn btn-danger" href="{% url 'movie_delete' m.name %}">Eliminar<i class="bi bi-trash"></i></a>               
+                        <a class="btn btn-warning" href="{% url 'movie_update' m.name %}">Editar<i class="bi bi-pencil-square"></i></a>
                     </div>
                 </td>
             </tr>
@@ -43,6 +48,7 @@
             {% endfor %}
         </tbody>
     </table>
+    {% endblock %}
     
 </body>
 </html>

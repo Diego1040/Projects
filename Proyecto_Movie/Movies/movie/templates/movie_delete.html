@@ -9,15 +9,25 @@
 </head>
 <body>
 
+    {% extends 'movie/templates/index.html' %}
+
+    {% block content %}
+
     {% if object %}
 
     <form action="" method="POST">
         {% csrf_token %}
-        <p>Estas seguro que deseas eliminar la pelicula: {{ object }}!!</p>
+        <div class="shadow-lg p-3 mb-5 bg-body rounded"> 
+        <p class="font-monospace">Estas seguro que deseas eliminar la pelicula: {{ object }}!!</p>
+        </div>
         <button type="submit" class="btn btn-danger">Si, borrar</button>
+        
     </form>
 
     {% endif %}
+
+    {% endblock %}
+    
     
 </body>
 </html>
