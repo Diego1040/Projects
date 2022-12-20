@@ -1,4 +1,4 @@
-"""TiendaElectroDomesticos URL Configuration
+"""Tienda URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Productos.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', home, name=''),
+    path('producto_list/', ProductoListView.as_view(), name='producto_list'),
+    path('producto_create/', ProductoCreate.as_view(), name='producto_create'),
+    path('producto_delete/<int:pk>', ProductoDelete.as_view(), name='producto_delete'),
+    path('producto_update/<int:pk>', ProductoUpdate.as_view(), name='producto_update')
 ]
