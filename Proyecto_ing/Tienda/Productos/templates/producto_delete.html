@@ -14,14 +14,15 @@
 
     {% block content %}
 
-    <p class="font-monospace" style="font-size: 30px;">Eliminar Producto</p>
+
+    <p class="font-monospace" style="font-size: 30px; ">Eliminar Producto</p>
 
     {% if object %}
 
     <form action="" method="POST">
         {% csrf_token %}
         <div class="shadow-lg p-3 mb-5 bg-body rounded"> 
-        <p class="font-monospace">Estas seguro que deseas eliminar este producto: {{ object }} !!..</p>
+        <p class="font-monospace" style="color: black;">Estas seguro que deseas eliminar este producto: {{ object }} !!..</p>
         </div>
         <button type="submit" class="btn btn-danger">Si, borrar</button>
         
