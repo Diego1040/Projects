@@ -15,5 +15,6 @@ class PeliculaForm(ModelForm):
         'director': forms.Select(attrs={'class':'form-control'}),
         'actores': forms.SelectMultiple(attrs={'class':'select form-control'}),
         'genero' : forms.SelectMultiple(attrs={'class' :'select form-control'}),
+        'fecha_estreno' : forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}),
         'imdb': forms.NumberInput(attrs={'class':'form-control', 'type':'number'})
     }

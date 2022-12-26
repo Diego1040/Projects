@@ -22,6 +22,7 @@ class Pelicula(models.Model):
         'Genero'
     )
     imdb = models.IntegerField()
+    fecha_estreno = models.DateField()
 
     def __str__(self) -> str:
         return f"{self.name}"
