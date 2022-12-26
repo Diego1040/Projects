@@ -18,6 +18,9 @@ class Pelicula(models.Model):
     actores = models.ManyToManyField(
         'Actor'
     )
+    genero = models.ManyToManyField(
+        'Genero'
+    )
     imdb = models.IntegerField()
 
     def __str__(self) -> str:

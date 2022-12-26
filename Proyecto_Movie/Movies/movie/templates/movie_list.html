@@ -21,6 +21,7 @@
                 <th>Pelicula</th>
                 <th>Director</th>
                 <th>Actores</th>
+                <th>Genero</th>
                 <th>Imdb</th>
             </tr>
         </thead>
@@ -34,6 +35,12 @@
 
                 <td>
                     {% for a in m.actores.all%}
+                    {{ a.name }}
+                    <br>
+                    {% endfor %}
+                </td>
+                <td>
+                    {% for a in m.genero.all%}
                     {{ a.name }}
                     <br>
                     {% endfor %}

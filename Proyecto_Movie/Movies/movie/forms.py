@@ -14,5 +14,6 @@ class PeliculaForm(ModelForm):
         'comment': forms.Textarea(attrs={'class':'form-control'}),
         'director': forms.Select(attrs={'class':'form-control'}),
         'actores': forms.SelectMultiple(attrs={'class':'select form-control'}),
+        'genero' : forms.SelectMultiple(attrs={'class' :'select form-control'}),
         'imdb': forms.NumberInput(attrs={'class':'form-control', 'type':'number'})
     }
